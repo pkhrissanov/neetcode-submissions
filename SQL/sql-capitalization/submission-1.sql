@@ -1,17 +1,9 @@
-CREATE TABLE videos(
-    id INTEGER,
-    name TEXT,
-    created_at DATE,
-    published BOOLEAN
+CREATE TABLE users (
+  name TEXT
 );
-
-
-
-
-
 
 
 -- Do not modify below this line --
 SELECT table_name, column_name, data_type
 FROM information_schema.columns
-WHERE table_name = 'videos';
+WHERE table_name = 'users';
