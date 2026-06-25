@@ -1,0 +1,32 @@
+from typing import List
+
+
+def get_index_of_seven(nums: List[int]) -> int:
+    for i, num in enumerate(nums):
+        if num == 7:
+            return i
+        elif i == len(nums)-1 and num != 7:
+            return -1
+
+
+def get_dist_between_sevens(nums: List[int]) -> int:
+    first = 0
+    first_found = False
+    for i, num in enumerate(nums):
+        if num == 7 and not first_found:
+            first = i
+            first_found = True
+            continue
+        elif num == 7 and first_found:
+            return i - first
+
+
+
+# do not modify below this line
+print(get_index_of_seven([1, 2, 3, 4, 5, 6, 7, 8, 9]))
+print(get_index_of_seven([1, 2, 3, 4, 5, 6, 8, 9]))
+print(get_index_of_seven([2, 4, 7, 5, 7, 8, 4, 2]))
+
+print(get_dist_between_sevens([1, 2, 7, 4, 5, 6, 7, 8, 9]))
+print(get_dist_between_sevens([2, 7, 7, 7, 8]))
+print(get_dist_between_sevens([7, 4, 8, 4, 2, 7]))
